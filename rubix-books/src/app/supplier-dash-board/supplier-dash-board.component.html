@@ -1,0 +1,123 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Bill</h1>
+        <div class="d-flex">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add supplier</button>
+        </div>
+    </div>
+</nav>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">address1</th>
+            <th scope="col">address2</th>
+            <th scope="col">city</th>
+            <th scope="col">district</th>
+            <th scope="col">state</th>
+            <th scope="col">country</th>
+            <th scope="col">taxIdentifier</th>
+            <th scope="col">zipcode</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <!-- <tbody>
+        <tr *ngFor="let bill of bills">
+          <th>{{bill.id}}</th>
+          <th>{{bill.supplier.id}}</th>
+          <th>{{bill.billNo}}</th>
+          <th>{{bill.billDate}}</th>
+          <th>{{bill.amount}}</th>
+          <th>{{bill.payByDate}}</th>
+          <th>{{bill.creditDays}}</th>
+        </tr>
+      </tbody> -->
+      <tbody>
+        <tr *ngFor="let supplier of suppliers">
+          <td>{{supplier.name}}</td>
+          <td>{{supplier.address1}}</td>
+          <td>{{supplier.address2}}</td>
+          <td>{{supplier.city}}</td>
+          <td>{{supplier.district}}</td>
+          <td>{{supplier.state}}</td>
+          <td>{{supplier.country}}</td>
+          <td>{{supplier.taxIdentifier}}</td>
+          <td>{{supplier.zipcode}}</td>
+          <td>{{supplier.email}}</td>
+          <td>{{supplier.phone}}</td>
+          <td>
+            <button class="btn btn-info">Edit</button>
+            <button class="btn btn-danger mx-3">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+</table>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">creat new Supplier</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">name</label>
+                  <input type="text" formControlName = "name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">address1</label>
+                  <input type="text" formControlName = "address1"  class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">address2</label>
+                  <input type="text" formControlName = "address2"  class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">city</label>
+                  <input type="text" formControlName = "city"  class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">district</label>
+                  <input type="text" formControlName = "district"  class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">state</label>
+                  <input type="text" formControlName = "state" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">country</label>
+                  <input type="text" formControlName = "country" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">taxIdentifier</label>
+                  <input type="text" formControlName = "taxIdentifier" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">zipcode</label>
+                  <input type="number" formControlName = "zipcode" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">email</label>
+                  <input type="text" formControlName = "email" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">phone</label>
+                  <input type="number" formControlName = "phone" class="form-control" id="exampleInputPassword1">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="postSupplierDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>

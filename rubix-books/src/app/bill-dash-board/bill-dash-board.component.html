@@ -1,0 +1,104 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Bill</h1>
+        <div class="d-flex">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Bill</button>
+        </div>
+    </div>
+</nav>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Supplier id</th>
+            <th scope="col">Bill no</th>
+            <th scope="col">Bill Date</th>
+            <th scope="col">Ammount</th>
+            <th scope="col">PayByDate</th>
+            <th scope="col">Credit Days</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <!-- <tbody>
+        <tr *ngFor="let bill of bills">
+          <th>{{bill.id}}</th>
+          <th>{{bill.supplier.id}}</th>
+          <th>{{bill.billNo}}</th>
+          <th>{{bill.billDate}}</th>
+          <th>{{bill.amount}}</th>
+          <th>{{bill.payByDate}}</th>
+          <th>{{bill.creditDays}}</th>
+        </tr>
+      </tbody> -->
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>232</td>
+          <td>march 2023</td>
+          <td>3000</td>
+          <td>march 2023</td>
+          <td>march 2023</td>
+          <td>
+            <button class="btn btn-info">Edit</button>
+            <button class="btn btn-danger mx-3">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+</table>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">creat new Bill</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formValue">
+                <!-- <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Id</label>
+                  <input type="text" formControlName = "supplierId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div> -->
+                <!-- <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">supplier</label>
+                  <input type="number" formControlName = "supplierId"  class="form-control" id="exampleInputPassword1">
+                </div> -->
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">bill No</label>
+                  <input type="number" formControlName = "bill"  class="form-control" id="exampleInputPassword1">
+                </div>
+                <!-- <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">bill Date</label>
+                  <input type="date" formControlName = "billDate"  class="form-control" id="exampleInputPassword1">
+                </div> -->
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">amount</label>
+                  <input type="number" formControlName = "amount"  class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">date</label>
+                  <input type="date" formControlName = "date" class="form-control" id="exampleInputPassword1">
+                </div>
+                <!-- <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">creditDays</label>
+                  <input type="number" formControlName = "creditDays" class="form-control" id="exampleInputPassword1">
+                </div> -->
+                <!-- <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button> -->
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="postBillDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>

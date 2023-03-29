@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Supplier id</th>
+        <th>Bill no</th>
+        <th>Bill Date</th>
+        <th>Ammount</th>
+        <th>PayByDate</th>
+        <th>Credit Days</th>
+      </tr>
+    </thead>    
+    <tbody>
+      <tr *ngFor="let bill of bills">
+        <th>{{bill.id}}</th>
+        <th>{{bill.supplier.id}}</th>
+        <th>{{bill.billNo}}</th>
+        <th>{{bill.billDate}}</th>
+        <th>{{bill.amount}}</th>
+        <th>{{bill.payByDate}}</th>
+        <th>{{bill.creditDays}}</th>
+      </tr>
+    </tbody>
+  </table>
