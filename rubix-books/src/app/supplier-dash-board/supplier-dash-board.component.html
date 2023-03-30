@@ -1,8 +1,8 @@
 <nav class="navbar navbar-light bg-primary">
     <div class="container-fluid">
-        <h1 style="color: aliceblue;">Bill</h1>
+        <h1 style="color: aliceblue;">Supplier</h1>
         <div class="d-flex">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add supplier</button>
+            <button (click)="clickAddSupplier()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add supplier</button>
         </div>
     </div>
 </nav>
@@ -48,8 +48,8 @@
           <td>{{supplier.email}}</td>
           <td>{{supplier.phone}}</td>
           <td>
-            <button class="btn btn-info">Edit</button>
-            <button class="btn btn-danger mx-3">Delete</button>
+            <button (click)="onEdit(supplier)" style="color: aliceblue;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+            <button (click)="deleteSupplier(supplier)" class="btn btn-danger mx-3">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -115,8 +115,9 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)="postSupplierDetails()" class="btn btn-primary">Add</button>
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="postSupplierDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateSupplierDetails()" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>

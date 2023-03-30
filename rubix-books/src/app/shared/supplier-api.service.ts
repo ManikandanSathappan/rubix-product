@@ -7,30 +7,30 @@ import { map } from 'rxjs';
 })
 export class SupplierApiService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  GetSupplier(){
+  GetSupplier() {
     return this.http.get("http://localhost:8080/supplier/viewAll")
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+      .pipe(map((res: any) => {
+        return res;
+      }))
   }
-  postSupplier(data : any){
+  postSupplier(data: any) {
     return this.http.post<any>("http://localhost:8080/supplier/create", data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+      .pipe(map((res: any) => {
+        return res;
+      }))
   }
-  updateSupplier(data : any){
-    return this.http.post<any>("http://localhost:8080/supplier/update/1", data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+  updateSupplier(data: any, id: number) {
+    return this.http.put<any>("http://localhost:8080/supplier/update/"+id, data)
+      .pipe(map((res: any) => {
+        return res;
+      }))
   }
-  deleteSupplier(data : any){
-    return this.http.post<any>("http://localhost:8080/supplier/delete/1", data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+  deleteSupplier(id: number) {
+    return this.http.delete<any>("http://localhost:8080/supplier/delete/" + id)
+      .pipe(map((res: any) => {
+        return res;
+      }))
   }
 }

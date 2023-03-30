@@ -1,4 +1,5 @@
 export class SupplierModal {
+    id: number = 0;
     name: string = "";
     address1: string = "";
     address2: string = "";
